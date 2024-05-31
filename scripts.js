@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'Parte2.html';
             } else if (window.location.pathname.includes('Parte4.html')) {
                 window.location.href = 'Parte3.html';
+            } else if (window.location.pathname.includes('Parte4.html')) {
+                window.location.href = 'Parte5.html';
             }
         });
     }
