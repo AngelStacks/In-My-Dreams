@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'Parte1.html';
             } else if (window.location.pathname.includes('Parte3.html')) {
                 window.location.href = 'Parte2.html';
+            } else if (window.location.pathname.includes('Parte4.html')) {
+                window.location.href = 'Parte3.html';
             }
         });
     }
@@ -33,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'Parte2.html';
             } else if (window.location.pathname.includes('Parte2.html')) {
                 window.location.href = 'Parte3.html';
-            }
+            } else if (window.location.pathname.includes('Parte3.html')) {
+                window.location.href = 'Parte4.html';
+            } 
         });
     };
