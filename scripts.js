@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (window.location.pathname.includes('Parte6.html')) {
                 window.location.href = 'Parte5.html';
             } else if (window.location.pathname.includes('Parte7.html')) {
-                window.location.href = 'parte6.html';
+                window.location.href = 'Parte6.html';
             } else if (window.location.pathname.includes('Parte7.html')) {
                 window.location.href = 'Parte6.html';
             }
