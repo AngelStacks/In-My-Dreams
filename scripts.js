@@ -51,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = 'Parte6.html';
             } else if (window.location.pathname.includes('Parte6.html')) {
                 window.location.href = 'Parte7.html';
+            } else if (window.location.pathname.includes('Parte7.html')) {
+                window.location.href = 'Parte8.html';
             }
         });
     };
