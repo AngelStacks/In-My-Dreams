@@ -271,3 +271,10 @@ footer {
         transform: translateY(0);
     }
 }
+.fa-instagram {
+    font-size: 30px; /* Tamaño deseado del icono */
+}
+.mi-icono {
+    width: 50px; /* Ancho deseado del icono */
+    height: 50px; /* Altura deseada del icono */
+}
