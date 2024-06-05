@@ -272,10 +272,6 @@ footer {
     }
 }
 
-.boton-cabeza-gato img {
-    width: 25%;
-    height: auto;
-}
 /* Estilos para el botón de cabeza de gato */
 .boton-cabeza-gato {
     position: fixed;
@@ -307,9 +303,10 @@ footer {
     right: 30px;
     z-index: 999;
     display: none; /* Las redes sociales estarán ocultas inicialmente */
+    flex-direction: column; /* Alineación vertical */
 }
 
-.redes-sociales a {
+.redes-sociales .icono {
     display: block;
     width: 50px;
     height: 50px;
@@ -320,9 +317,16 @@ footer {
     line-height: 50px;
     margin-bottom: 10px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.redes-sociales a:hover {
+.redes-sociales .icono:hover {
     background-color: #0056b3;
+    transform: scale(1.1); /* Agrandar el icono al pasar el ratón por encima */
 }
+
+.redes-sociales .instagram { background-color: #E1306C; }
+.redes-sociales .twitter { background-color: #1DA1F2; }
+.redes-sociales .facebook { background-color: #3B5998; }
+.redes-sociales .whatsapp { background-color: #25D366; }
+
