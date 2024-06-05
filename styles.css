@@ -287,7 +287,7 @@ footer {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    animation: moverCabezaGato 5s infinite alternate; /* Animación del movimiento */
+    animation: moverCabezaGato 2s infinite alternate; /* Animación del movimiento */
 }
 
 /* Animación del movimiento de la cabeza de gato */
