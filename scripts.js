@@ -54,3 +54,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
+// Obtener el botón de despliegue y el contenedor de los botones flotantes
+const botonDesplegar = document.getElementById('botonDesplegar');
+const botonesFlotantes = document.getElementById('botonesFlotantes');
+
+// Función para desplegar/ocultar los botones flotantes al hacer clic en el botón de despliegue
+botonDesplegar.addEventListener('click', function() {
+    if (botonesFlotantes.style.display === 'none') {
+        botonesFlotantes.style.display = 'block';
+    } else {
+        botonesFlotantes.style.display = 'none';
+    }
+});
+
+// Función para agregar un botón flotante con un ícono específico y un enlace
+function agregarBotonFlotante(iconoClase, enlace) {
+    const boton = document.createElement('a');
+    boton.href = enlace;
+    boton.className = 'boton-flotante';
+    boton.innerHTML = `<i class="${iconoClase}"></i>`;
+    botonesFlotantes.appendChild(boton);
+}
+
+// Llamar a la función para agregar los botones flotantes dinámicamente
+// Por ejemplo:
+// agregarBotonFlotante('fab fa-instagram', 'https://www.instagram.com/tu_usuario');
+// agregarBotonFlotante('fab fa-whatsapp', 'https://wa.me/15551234567');
+
