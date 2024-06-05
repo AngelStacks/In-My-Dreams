@@ -272,35 +272,33 @@ footer {
     }
 }
 .fa-instagram {
-    font-size: 15px; /* Tamaño deseado del icono */
+    font-size: 25px; /* Tamaño deseado del icono */
 }
+
 .mi-icono {
     width: 50px; /* Ancho deseado del icono */
     height: 50px; /* Altura deseada del icono */
 }
+
+/* Ajustes para el icono de contacto */
 .icono-contacto {
     display: inline-block;
     color: white;
     text-decoration: none; /* Quitar subrayado del enlace */
-    font-size: 500px; /* Tamaño del icono */
+    font-size: 30px; /* Tamaño del icono */
     width: 70px; /* Ancho del icono */
     height: 70px; /* Altura del icono */
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%; /* Hacer el icono redondo */
-    margin: 20px;
-    transition: background-color 0.3s; /* Transición suave para el hover */
+    margin: 5px;
+    transition: transform 0.3s, background-color 0.3s; /* Transición suave para el hover */
 }
 
 /* Color específico para el icono de WhatsApp */
 .icono-whatsapp {
     background-color: #25D366; /* Color verde de WhatsApp */
-}
-
-/* Color de fondo más oscuro al pasar el cursor */
-.icono-whatsapp:hover {
-    background-color: #128C7E; /* Color más oscuro al pasar el cursor */
 }
 
 /* Animación al pasar el cursor */
@@ -317,3 +315,4 @@ footer {
 .icono-contacto:hover i {
     transform: scale(1.2); /* Agrandar el icono */
 }
+
