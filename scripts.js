@@ -54,15 +54,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-// Obtener el botón de cabeza de gato y el contenedor de las redes sociales
-const botonCabezaGato = document.getElementById('botonCabezaGato');
-const redesSociales = document.getElementById('redesSociales');
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el botón de cabeza de gato y el contenedor de las redes sociales
+    const botonCabezaGato = document.getElementById('botonCabezaGato');
+    const redesSociales = document.getElementById('redesSociales');
 
-// Función para desplegar/ocultar las redes sociales al hacer clic en el botón de cabeza de gato
-botonCabezaGato.addEventListener('click', function() {
-    if (redesSociales.style.display === 'none') {
-        redesSociales.style.display = 'block';
-    } else {
-        redesSociales.style.display = 'none';
-    }
+    // Función para desplegar/ocultar las redes sociales al hacer clic en el botón de cabeza de gato
+    botonCabezaGato.addEventListener('click', function() {
+        if (redesSociales.style.display === 'none' || redesSociales.style.display === '') {
+            redesSociales.style.display = 'flex'; // Mostrar las redes sociales
+        } else {
+            redesSociales.style.display = 'none'; // Ocultar las redes sociales
+        }
+    });
 });
