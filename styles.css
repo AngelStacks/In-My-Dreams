@@ -285,7 +285,7 @@ footer {
             padding: 10px;
             text-decoration: none; /* Quitar subrayado del enlace */
             border-radius: 50%; /* Hacer el botón redondo */
-            font-size: 24px; /* Tamaño del icono */
+            font-size: 50px; /* Tamaño del icono */
             width: 50px; /* Ancho del botón */
             height: 50px; /* Altura del botón */
             display: flex;
