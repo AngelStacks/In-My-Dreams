@@ -287,7 +287,7 @@ footer {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    animation: moverCabezaGato 2s infinite alternate; /* Animación del movimiento */
+    animation: moverCabezaGato 5s infinite alternate; /* Animación del movimiento */
 }
 
 /* Animación del movimiento de la cabeza de gato */
@@ -302,10 +302,19 @@ footer {
     bottom: 90px;
     right: 30px;
     z-index: 999;
-    display: none; /* Las redes sociales estarán ocultas inicialmente */
+    display: flex;
     flex-direction: column; /* Alineación vertical */
+    opacity: 0; /* Inicialmente oculto */
+    visibility: hidden; /* Inicialmente oculto */
+    transform: translateY(20px); /* Inicialmente fuera de vista */
+    transition: all 0.5s ease; /* Transición suave */
 }
-
+/* Mostrar las redes sociales cuando están activas */
+.redes-sociales.activo {
+    opacity: 1; /* Totalmente visible */
+    visibility: visible; /* Visible */
+    transform: translateY(0); /* En su posición original */
+}
 .redes-sociales .icono {
     display: block;
     width: 50px;
