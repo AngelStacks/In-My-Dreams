@@ -282,7 +282,7 @@ footer {
       display: inline-block;
       color: white;
       text-decoration: none; /* Quitar subrayado del enlace */
-      font-size: 50px; /* Tamaño del icono */
+      font-size: 500px; /* Tamaño del icono */
       width: 70px; /* Ancho del icono */
       height: 70px; /* Altura del icono */
       display: flex;
