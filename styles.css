@@ -283,8 +283,8 @@ footer {
       color: white;
       text-decoration: none; /* Quitar subrayado del enlace */
       font-size: 50px; /* Tamaño del icono */
-      width: 50px; /* Ancho del icono */
-      height: 50px; /* Altura del icono */
+      width: 70px; /* Ancho del icono */
+      height: 70px; /* Altura del icono */
       display: flex;
       align-items: center;
       justify-content: center;
