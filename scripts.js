@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
             redesSociales.style.display = "flex";
             setTimeout(() => {
                 redesSociales.classList.add("show");
-            }, 5); // Añadimos un pequeño delay para que la animación funcione
+            }, 10); // Añadimos un pequeño delay para que la animación funcione
         }
         visible = !visible;
     });
