@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Función para desplegar/ocultar las redes sociales al hacer clic en el botón de cabeza de gato
         botonCabezaGato.addEventListener('click', function() {
             console.log("Botón de cabeza de gato clickeado");
-            redesSociales.classList.toggle('activo'); // Alternar la clase 'activo'
         });
     } else {
         console.error("No se encontraron los elementos 'botonCabezaGato' o 'redesSociales'");
