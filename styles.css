@@ -331,7 +331,7 @@ footer {
 
 .redes-sociales .icono:hover {
     background-color: #0056b3;
-    transform: scale(1.1); /* Agrandar el icono al pasar el ratón por encima */
+    transform: scale(1.4); /* Agrandar el icono al pasar el ratón por encima */
 }
 
 .redes-sociales .instagram { background-color: #E1306C; }
