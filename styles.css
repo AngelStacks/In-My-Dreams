@@ -375,3 +375,10 @@ footer {
     top: 20px;
     left: 5px; /* Deja espacio para el botón de despliegue */
 }
+.menu {
+    display: none;
+}
+
+.menu.active {
+    display: block;
+}
