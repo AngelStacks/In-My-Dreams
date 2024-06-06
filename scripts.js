@@ -71,16 +71,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         visible = !visible;
     });
-
-    // Añadimos un listener a los enlaces para prevenir el comportamiento por defecto en caso de error
-    const enlaces = document.querySelectorAll(".redes-sociales a");
-    enlaces.forEach(enlace => {
-        enlace.addEventListener("click", function(event) {
-            if (!event.currentTarget.href) {
-                event.preventDefault();
-                alert("Error en el enlace. Por favor verifica el enlace.");
-            }
-        });
-    });
 });
-
