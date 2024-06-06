@@ -272,7 +272,7 @@ footer {
     }
 }
 
-/* Estilos para el botón de cabeza de gato */
+/* Estilos para el botón de gato */
 .boton-cabeza-gato {
     position: fixed;
     bottom: 20px;
@@ -331,10 +331,9 @@ footer {
 
 .redes-sociales .icono:hover {
     background-color: #0056b3;
-    transform: scale(1.5); /* Agrandar el icono al pasar el ratón por encima */
+    transform: scale(1.4); /* Agrandar el icono al pasar el ratón por encima */
 }
 
+
 .redes-sociales .instagram { background-color: #E1306C; }
-.redes-sociales .twitter { background-color: #1DA1F2; }
-.redes-sociales .facebook { background-color: #3B5998; }
 .redes-sociales .whatsapp { background-color: #25D366; }
