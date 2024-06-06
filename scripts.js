@@ -81,3 +81,21 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle('activo');
     });
 });
+
+function sendMessage() {
+    var userInput = document.getElementById("user-input").value;
+    var chatDisplay = document.getElementById("chat-display");
+
+    // Agrega el mensaje del usuario al área de visualización del chat
+    chatDisplay.innerHTML += "<p><strong>Tú:</strong> " + userInput + "</p>";
+
+    // Limpia el área de entrada del usuario
+    document.getElementById("user-input").value = "";
+
+    // Simula una respuesta del chatbot (puedes reemplazar esto con la lógica real de tu chatbot)
+    setTimeout(function() {
+        chatDisplay.innerHTML += "<p><strong>Chatbot:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>";
+        // Hacer scroll hacia abajo para mostrar el nuevo mensaje
+        chatDisplay.scrollTop = chatDisplay.scrollHeight;
+    }, 500);
+}
