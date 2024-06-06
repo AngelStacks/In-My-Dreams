@@ -326,3 +326,13 @@ footer {
 
 .redes-sociales .instagram { background-color: #E1306C; }
 .redes-sociales .whatsapp { background-color: #25D366; }
+
+/* Example CSS for Parallax Effect */
+.parallax {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Ben_Maguire_2017-05-25_%28Unsplash%29.jpg');
+    min-height: 400px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
