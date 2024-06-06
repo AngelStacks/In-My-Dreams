@@ -58,17 +58,15 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM completamente cargado y parseado");
 
-document.addEventListener("DOMContentLoaded", function() {
     const botonCabezaGato = document.getElementById("botonCabezaGato");
     const redesSociales = document.getElementById("redesSociales");
 
-    botonCabezaGato.addEventListener("click", function() {
-        redesSociales.classList.toggle("activo");
-    });
-});
+    // Verificar que los elementos existen
+    if (botonCabezaGato && redesSociales) {
         // Función para desplegar/ocultar las redes sociales al hacer clic en el botón de cabeza de gato
         botonCabezaGato.addEventListener('click', function() {
             console.log("Botón de cabeza de gato clickeado");
+            redesSociales.classList.toggle("activo");
         });
     } else {
         console.error("No se encontraron los elementos 'botonCabezaGato' o 'redesSociales'");
