@@ -54,21 +54,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-document.addEventListener("DOMContentLoaded", function() {
-    const botonCabezaGato = document.getElementById("botonCabezaGato");
-    const redesSociales = document.getElementById("redesSociales");
-    let visible = false;
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM completamente cargado y parseado");
 
-    botonCabezaGato.addEventListener("click", function() {
-        if (visible) {
-            redesSociales.style.display = "none";
-            redesSociales.classList.remove("show");
-        } else {
-            redesSociales.style.display = "flex";
-            setTimeout(() => {
-                redesSociales.classList.add("show");
-            }, 10); // Añadimos un pequeño delay para que la animación funcione
-        }
-        visible = !visible;
-    });
+    // Obtener el botón de cabeza de gato y el contenedor de las redes sociales
+    const botonCabezaGato = document.getElementById('botonCabezaGato');
+    const redesSociales = document.getElementById('redesSociales');
+
+    // Verificar que los elementos existen
+    if (botonCabezaGato && redesSociales) {
+        // Función para desplegar/ocultar las redes sociales al hacer clic en el botón de cabeza de gato
+        botonCabezaGato.addEventListener('click', function() {
+            console.log("Botón de cabeza de gato clickeado");
+            redesSociales.classList.toggle('activo'); // Alternar la clase 'activo'
+        });
+    } else {
+        console.error("No se encontraron los elementos 'botonCabezaGato' o 'redesSociales'");
+    }
 });
