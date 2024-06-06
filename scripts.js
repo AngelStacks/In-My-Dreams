@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-    // Redirigir al hacer clic en los botones de navegación
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
 
@@ -54,16 +53,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-// Esperar a que el DOM esté completamente cargado
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM completamente cargado y parseado");
 
     const botonCabezaGato = document.getElementById("botonCabezaGato");
     const redesSociales = document.getElementById("redesSociales");
 
-    // Verificar que los elementos existen
     if (botonCabezaGato && redesSociales) {
-        // Función para desplegar/ocultar las redes sociales al hacer clic en el botón de cabeza de gato
         botonCabezaGato.addEventListener('click', function() {
             console.log("Botón de cabeza de gato clickeado");
             redesSociales.classList.toggle("activo");
