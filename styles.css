@@ -337,3 +337,41 @@ footer {
 
 .redes-sociales .instagram { background-color: #E1306C; }
 .redes-sociales .whatsapp { background-color: #25D366; }
+
+
+.menu-lateral {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(-200px); /* Por defecto, el menú está fuera de la vista */
+}
+
+.menu-lateral.activo {
+    transform: translateX(0); /* Cuando está activo, se despliega hacia la derecha */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#menuButton {
+    position: absolute;
+    top: 20px;
+    left: 180px; /* Deja espacio para el botón de despliegue */
+}
