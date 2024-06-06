@@ -371,7 +371,7 @@ footer {
 }
 
 #menuButton {
-    position: absolute;
+    position: fixed;
     top: 20px;
-    left: 180px; /* Deja espacio para el botón de despliegue */
+    left: 0px; /* Deja espacio para el botón de despliegue */
 }
