@@ -339,4 +339,29 @@ footer {
 #audio-control {
     display: none;
 }
+.audio-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.audio-controls button {
+    background-color: #21e2e2;
+    border: none;
+    padding: 10px 20px;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.audio-controls button:hover {
+    background-color: #17b1b1;
+    transform: scale(1.05);
+}
 
