@@ -70,3 +70,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('background-audio');
+    const audioToggle = document.getElementById('audio-toggle');
+
+    audioToggle.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            audioToggle.textContent = 'Pausar Música';
+        } else {
+            audio.pause();
+            audioToggle.textContent = 'Reproducir Música';
+        }
+    });
+});
