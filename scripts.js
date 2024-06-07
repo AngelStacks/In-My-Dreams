@@ -71,16 +71,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    const playButton = document.getElementById('play-music');
+    const pauseButton = document.getElementById('pause-music');
     const audio = document.getElementById('background-audio');
-    const audioToggle = document.getElementById('audio-toggle');
 
-    audioToggle.addEventListener('click', function() {
-        if (audio.paused) {
+    if (playButton) {
+        playButton.addEventListener('click', function() {
             audio.play();
-            audioToggle.textContent = 'Pausar Música';
-        } else {
+        });
+    }
+
+    if (pauseButton) {
+        pauseButton.addEventListener('click', function() {
             audio.pause();
-            audioToggle.textContent = 'Reproducir Música';
-        }
-    });
+        });
+    }
 });
