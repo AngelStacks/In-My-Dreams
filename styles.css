@@ -336,19 +336,32 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
 }
-#audio-control {
-    display: none;
-}
-.audio-controls {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.audio-controls button {
+.footer-icons a {
+    color: #21e2e2;
+    margin: 0 10px;
+    font-size: 1.5em; /* Ajusta el tamaño del ícono aquí */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #ffffff;
+}
+
+#music-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#music-controls button {
     background-color: #21e2e2;
     border: none;
     padding: 10px 20px;
@@ -358,10 +371,10 @@ footer {
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 5px;
 }
 
-.audio-controls button:hover {
+#music-controls button:hover {
     background-color: #17b1b1;
     transform: scale(1.05);
 }
-
