@@ -69,21 +69,22 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("No se encontraron los elementos 'botonCabezaGato' o 'redesSociales'");
     }
 });
-
 document.addEventListener('DOMContentLoaded', function() {
-    const playButton = document.getElementById('play-music');
-    const pauseButton = document.getElementById('pause-music');
     const audio = document.getElementById('background-audio');
+    const playButton = document.getElementById('play-button');
+    const pauseButton = document.createElement('button');
+    pauseButton.innerHTML = '⏸';
+    pauseButton.id = 'pause-button';
+    const controls = document.querySelector('.controls');
 
-    if (playButton) {
-        playButton.addEventListener('click', function() {
-            audio.play();
-        });
-    }
+    playButton.addEventListener('click', function() {
+        audio.play();
+        playButton.replaceWith(pauseButton);
+    });
 
-    if (pauseButton) {
-        pauseButton.addEventListener('click', function() {
-            audio.pause();
-        });
-    }
+    pauseButton.addEventListener('click', function() {
+        audio.pause();
+        pauseButton.replaceWith(playButton);
+    });
 });
+
