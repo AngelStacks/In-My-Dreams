@@ -268,7 +268,7 @@ footer {
 .boton-cabeza-gato {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 5px;
     z-index: 1000;
     width: 50px;
     height: 50px;
@@ -283,14 +283,14 @@ footer {
 }
 
 @keyframes moverCabezaGato {
-    from { transform: rotate(-10deg); }
-    to { transform: rotate(10deg); }
+    from { transform: rotate(-3deg); }
+    to { transform: rotate(2deg); }
 }
 
 .redes-sociales {
     position: fixed;
     bottom: 90px;
-    right: 30px;
+    right: 10px;
     z-index: 999;
     display: flex;
     flex-direction: column; 
@@ -313,14 +313,14 @@ footer {
     border-radius: 50%;
     text-align: center;
     line-height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .redes-sociales .icono:hover {
     background-color: #0056b3;
-    transform: scale(1.4); 
+    transform: scale(1.0); 
 }
 
 
@@ -336,45 +336,33 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.footer-icons {
+.music-player {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 10px;
 }
 
-.footer-icons a {
-    color: #21e2e2;
-    margin: 0 10px;
-    font-size: 1.5em; /* Ajusta el tamaño del ícono aquí */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-icons a:hover {
-    color: #ffffff;
-}
-
-#music-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-#music-controls button {
-    background-color: #21e2e2;
+.controls button {
+    font-size: 20px;
+    background-color: transparent;
     border: none;
-    padding: 10px 20px;
-    color: #000;
-    font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 0 5px;
 }
 
-#music-controls button:hover {
-    background-color: #17b1b1;
-    transform: scale(1.05);
+.controls button:hover {
+    color: #1ED760; /* Color de resaltado al pasar el mouse */
+}
+
+.music-player {
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    cursor: pointer;
 }
