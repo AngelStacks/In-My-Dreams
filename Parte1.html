@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Una página más</title>
@@ -8,20 +8,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>El Guardián de los Sueños</h1>
+        <nav>
+            <ul>
+                <li><a href="Parte1.html">Parte I</a></li>
+                <li><a href="Parte2.html">Parte II</a></li>
+                <li><a href="Parte3.html">Parte III</a></li>
+                <li><a href="Parte4.html">Parte IV</a></li>
+                <li><a href="Parte5.html">Parte V</a></li>
+                <li><a href="Parte6.html">Parte VI</a></li>
+                <li><a href="Parte7.html">Parte VII</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <section id="seccion1">
-            <h2>El Susurro de los Sueños  I</h2>
-            <p> En la penumbra del crepúsculo, mis sueños cobran vida cada noche. Cierro los ojos y me sumerjo en un mundo donde tú eres la constante, ya sea en un bosque encantado o en una ciudad olvidada por el tiempo. Siempre estás ahí, al borde de mi visión. Tus cabellos, como hilos de plata bajo la luna, brillan en la oscuridad, y tu presencia me envuelve en una paz que no encuentro en la vigilia. </p>
-            <p> Aunque eres un espejismo en la vida diurna, anhelo que me hables en mis sueños. Conozco tu altura, tu olor y hasta cómo es tu cabello, pero tus ojos siempre están ocultos. Una noche, mientras el viento susurra secretos entre los árboles, te llamo en un murmullo. -¿Quién eres?-, pregunto. -Soy la guardiana de tus sueños-, responde una voz melodiosa, resonando en mi mente. -Nos conocemos desde hace más tiempo del que puedes recordar.- </p>
-            <p> Me despierto con un sobresalto, el corazón latiendo con fuerza. La voz aún resuena en mi mente. Decido que no puedo seguir así, necesito respuestas. La próxima vez que te vea en mis sueños, prometo desvelar el misterio que te rodea y descubrir quién eres en realidad. </p>
-            <a href="index.html" class="nav-button">inicio</a>
-            <button class="nav-button" id="nextButton"><i class="fas fa-arrow-right"></i>Parte II</button>
+            <h2>IN MY DREAMS</h2>
+            <p>En un mundo donde los sueños se entrelazan con la realidad, una figura enigmática se alza en las sombras de la noche. En "Sombras en el Umbral", descubre un misterio que desafía los límites de lo conocido. ¿Quién acecha en los reinos del sueño, ocultando su identidad en las brumas de la imaginación? Prepárate para adentrarte en un viaje fascinante hacia lo desconocido, donde cada página revela un nuevo secreto y cada sombra esconde una verdad oculta.</p>
+            <p> 𝘊𝘰𝘭𝘰𝘤𝘢 𝘮𝘶𝘴𝘪𝘤𝘢 𝘺 𝘳𝘦𝘭𝘢𝘫𝘢𝘵𝘦, 𝘭𝘦𝘦 𝘤𝘰𝘯 𝘵𝘳𝘢𝘯𝘲𝘶𝘪𝘭𝘪𝘥𝘢𝘥. ⭣⭣⭣ </p>
+            <div class="music-player">
+                <div class="album-art"></div>
+                <div class="controls">
+                    <button id="prev-button">⬅</button>
+                    <button id="play-button">▶</button>
+                    <button id="next-button">⮕</button>
+                </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Stacks. Todos los derechos reservados a AngelStacks.</p>
+        <div id="botonCabezaGato" class="boton-cabeza-gato">
+            <i class="fas fa-cat"></i>
+                <div id="redesSociales" class="redes-sociales">
+                    <a href="https://www.instagram.com/angelstacks11" class="icono instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/+573003466591" class="icono whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+        </div>
     </footer>
+    <audio id="background-audio" loop>
+        <source src="Claro de Luna de Beethoven.mp3" type="audio/mpeg">
+        <source src="Chopin - Nocturne op.9 No.2.mp3" type="audio/mpeg">
+        <source src="CHOPIN - NOCTURNE NO.20.mp3" type="audio/mpeg">
+    </audio>
     <script src="scripts.js"></script>
-    
 </body>
 </html>
