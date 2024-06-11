@@ -69,22 +69,77 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("No se encontraron los elementos 'botonCabezaGato' o 'redesSociales'");
     }
 });
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const audio = document.getElementById('background-audio');
-    const playButton = document.getElementById('play-button');
-    const pauseButton = document.createElement('button');
-    pauseButton.innerHTML = '⏸';
-    pauseButton.id = 'pause-button';
-    const controls = document.querySelector('.controls');
+    const songs = [
+        "Claro de Luna de Beethoven.mp3",
+        "Chopin - Nocturne op.9 No.2.mp3",
+        "CHOPIN - NOCTURNE NO.20.mp3"
+    ];
+    let currentSongIndex = 0;
 
-    playButton.addEventListener('click', function() {
+    if (sessionStorage.getItem('currentSongIndex')) {
+        currentSongIndex = parseInt(sessionStorage.getItem('currentSongIndex'), 10);
+        audio.src = songs[currentSongIndex];
+    }
+    if (sessionStorage.getItem('currentTime')) {
+        audio.currentTime = parseFloat(sessionStorage.getItem('currentTime'));
+    }
+
+    audio.play();
+
+    audio.addEventListener('ended', () => {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        audio.src = songs[currentSongIndex];
         audio.play();
-        playButton.replaceWith(pauseButton);
+        sessionStorage.setItem('currentSongIndex', currentSongIndex);
     });
 
-    pauseButton.addEventListener('click', function() {
-        audio.pause();
-        pauseButton.replaceWith(playButton);
+    audio.addEventListener('timeupdate', () => {
+        sessionStorage.setItem('currentTime', audio.currentTime);
     });
+
+    // Función para cargar el contenido de la página de manera asíncrona
+    window.loadPage = function(url) {
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('main-content').innerHTML = html;
+                history.pushState({}, '', url); // Actualiza la URL
+            })
+            .catch(error => console.error('Error al cargar la página:', error));
+    };
+
+    // Detecta los cambios en la URL (carga de página anterior/siguiente)
+    window.addEventListener('popstate', function(event) {
+        const url = location.pathname.substring(1);
+        loadPage(url);
+    });
+
+    // Carga la página inicial
+    loadPage('parte1.html');
 });
+function setMusicState(state) {
+    document.cookie = `musicState=${state}; path=/`;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const audio = document.getElementById('background-audio');
+    const songs = [
+        "Claro de Luna de Beethoven.mp3",
+        "Chopin - Nocturne op.9 No.2.mp3",
+        "CHOPIN - NOCTURNE NO.20.mp3"
+    ];
+    let currentIndex = 0;
 
+    function playNextSong() {
+        currentIndex = (currentIndex + 1) % songs.length;
+        audio.src = songs[currentIndex];
+        audio.play();
+    }
+
+    audio.addEventListener('ended', playNextSong);
+
+    // Reproduce la primera canción automáticamente
+    audio.src = songs[currentIndex];
+    audio.play();
+});
