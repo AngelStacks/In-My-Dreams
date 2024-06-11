@@ -143,3 +143,4 @@ document.addEventListener("DOMContentLoaded", function() {
     audio.src = songs[currentIndex];
     audio.play();
 });
+
