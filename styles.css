@@ -17,7 +17,6 @@ body {
     padding-bottom: 70px;
     animation: scrollBackground 80s linear infinite;
     position: relative;
-    animation: scrollBackground 80s linear infinite;
 }
 
 body::before {
@@ -79,8 +78,8 @@ nav ul li a::before {
     visibility: hidden;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
-    
 }
+
 nav ul li a:hover {
     text-decoration: underline;
 }
@@ -116,14 +115,12 @@ main {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: background-color 0.5s;
     animation: fadeInUp 1s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 50;
 }
+
 main.show {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-
 
 section {
     margin-bottom: 25px;
@@ -170,12 +167,14 @@ footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     font-size: 14px;
 }
+
 .particle {
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     pointer-events: none;
 }
+
 .nav-button {
     background-color: #21e2e2;
     color: #000000;
@@ -195,7 +194,6 @@ footer {
 }
 
 .nav-button#nextButton i {
-    
     float: right;
     margin-left: 5px;
 }
@@ -255,6 +253,7 @@ footer {
         background-position: 100% 0;
     }
 }
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -276,10 +275,7 @@ footer {
         transform: translateY(0);
     }
 }
-@keyframes move {
-    0% { transform: translateY(0) translateX(0); }
-    100% { transform: translateY(-100vh) translateX(calc(100vw - 100%)); }
-}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -295,6 +291,7 @@ footer {
     opacity: 0;
     animation: fadeIn 1s ease forwards;
 }
+
 .boton-cabeza-gato {
     position: fixed;
     bottom: 20px;
@@ -330,11 +327,13 @@ footer {
     transform: translateY(20px); 
     transition: all 0.5s ease; 
 }
+
 .redes-sociales.activo {
     opacity: 1; 
     visibility: visible; 
     transform: translateY(0); 
 }
+
 .redes-sociales .icono {
     display: block;
     width: 50px;
@@ -354,14 +353,13 @@ footer {
     transform: scale(1.0); 
 }
 
-
 .redes-sociales .instagram { background-color: #E1306C; }
 .redes-sociales .whatsapp { background-color: #25D366; }
 
 .parallax {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Ben_Maguire_2017-05-25_%28Unsplash%29.jpg');
-    min-height: 300px; 
-    background-attachment: fixed;
+    min-height: 400px; /* Ajusta esta altura según sea necesario */
+    background-attachment: fixed; /* Mantén la imagen fija */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -389,6 +387,7 @@ input[type="submit"]:hover {
     background-color: #17b1b1;
     transform: scale(1.05);
 }
+
 img {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -400,7 +399,7 @@ img.loaded {
 
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Ejemplo de ajuste de tamaño de fuente */
+        font-size: 14px; /* Ajuste de tamaño de fuente */
         padding-bottom: 50px; /* Ajuste del espacio inferior */
     }
 
@@ -419,4 +418,9 @@ img.loaded {
     .boton-cabeza-gato {
         bottom: 10px; /* Ajuste de posición del botón de gato */
     }
+
+    .parallax {
+        min-height: 300px; /* Ajuste de altura mínima para dispositivos móviles */
+    }
 }
+
