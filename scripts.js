@@ -144,3 +144,22 @@ document.addEventListener("DOMContentLoaded", function() {
     audio.play();
 });
 
+        const numParticles = 100;
+        for (let i = 0; i < numParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.width = `${Math.random() * 5}px`;
+            particle.style.height = `${Math.random() * 5}px`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animation = `move ${Math.random() * 5 + 5}s linear infinite`;
+            document.body.appendChild(particle);
+        }
+
+        // Animar partículas
+        document.styleSheets[0].insertRule(`
+            @keyframes move {
+                0% { transform: translateY(0) translateX(0); }
+                100% { transform: translateY(-100vh) translateX(${Math.random() * 20 - 10}vw); }
+            }
+        `, document.styleSheets[0].cssRules.length);
