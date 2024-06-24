@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Una página más</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,7 +24,7 @@
         </nav>
     </header>
     <main>
-        <section id="seccion1">
+        <section id="seccion1" data-aos="fade-up">
             <h2>IN MY DREAMS</h2>
             <p>En un mundo donde los sueños se entrelazan con la realidad, una figura enigmática se alza en las sombras de la noche. En "Sombras en el Umbral", descubre un misterio que desafía los límites de lo conocido. ¿Quién acecha en los reinos del sueño, ocultando su identidad en las brumas de la imaginación? Prepárate para adentrarte en un viaje fascinante hacia lo desconocido, donde cada página revela un nuevo secreto y cada sombra esconde una verdad oculta.</p>
         </section>
@@ -38,11 +39,13 @@
                 </div>
         </div>
     </footer>
-    <audio id="background-audio" loop autoplay>
-        <source src="Claro de Luna de Beethoven.mp3" type="audio/mpeg">
-        <source src="Chopin - Nocturne op.9 No.2.mp3" type="audio/mpeg">
-        <source src="CHOPIN - NOCTURNE NO.20.mp3" type="audio/mpeg">
-    </audio>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="scripts.js"></script>
+
 </body>
 </html>
