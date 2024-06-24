@@ -69,97 +69,83 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("No se encontraron los elementos 'botonCabezaGato' o 'redesSociales'");
     }
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const audio = document.getElementById('background-audio');
-    const songs = [
-        "Claro de Luna de Beethoven.mp3",
-        "Chopin - Nocturne op.9 No.2.mp3",
-        "CHOPIN - NOCTURNE NO.20.mp3"
-    ];
-    let currentSongIndex = 0;
 
-    if (sessionStorage.getItem('currentSongIndex')) {
-        currentSongIndex = parseInt(sessionStorage.getItem('currentSongIndex'), 10);
-        audio.src = songs[currentSongIndex];
-    }
-    if (sessionStorage.getItem('currentTime')) {
-        audio.currentTime = parseFloat(sessionStorage.getItem('currentTime'));
-    }
-
-    audio.play();
-
-    audio.addEventListener('ended', () => {
-        currentSongIndex = (currentSongIndex + 1) % songs.length;
-        audio.src = songs[currentSongIndex];
-        audio.play();
-        sessionStorage.setItem('currentSongIndex', currentSongIndex);
-    });
-
-    audio.addEventListener('timeupdate', () => {
-        sessionStorage.setItem('currentTime', audio.currentTime);
-    });
-
-    // Función para cargar el contenido de la página de manera asíncrona
     window.loadPage = function(url) {
         fetch(url)
             .then(response => response.text())
             .then(html => {
                 document.getElementById('main-content').innerHTML = html;
-                history.pushState({}, '', url); // Actualiza la URL
+                history.pushState({}, '', url); 
             })
             .catch(error => console.error('Error al cargar la página:', error));
     };
 
-    // Detecta los cambios en la URL (carga de página anterior/siguiente)
     window.addEventListener('popstate', function(event) {
         const url = location.pathname.substring(1);
         loadPage(url);
     });
 
-    // Carga la página inicial
-    loadPage('parte1.html');
-});
-function setMusicState(state) {
-    document.cookie = `musicState=${state}; path=/`;
-}
-document.addEventListener("DOMContentLoaded", function() {
-    const audio = document.getElementById('background-audio');
-    const songs = [
-        "Claro de Luna de Beethoven.mp3",
-        "Chopin - Nocturne op.9 No.2.mp3",
-        "CHOPIN - NOCTURNE NO.20.mp3"
-    ];
-    let currentIndex = 0;
-
-    function playNextSong() {
-        currentIndex = (currentIndex + 1) % songs.length;
-        audio.src = songs[currentIndex];
-        audio.play();
+const numParticles = 100;
+    for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.width = `${Math.random() * 5}px`;
+        particle.style.height = `${Math.random() * 5}px`;
+        particle.style.top = `${Math.random() * 100}vh`;
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.animation = `move ${Math.random() * 5 + 5}s linear infinite`;
+        document.body.appendChild(particle);
     }
 
-    audio.addEventListener('ended', playNextSong);
+    document.styleSheets[0].insertRule(`
+        @keyframes move {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-100vh) translateX(${Math.random() * 20 - 10}vw); }
+        }
+    `, document.styleSheets[0].cssRules.length);
 
-    // Reproduce la primera canción automáticamente
-    audio.src = songs[currentIndex];
-    audio.play();
+
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function(...args) {
+        if (!lastRan) {
+            func.apply(this, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function() {
+                if ((Date.now() - lastRan) >= limit) {
+                    func.apply(this, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    };
+}
+
+window.addEventListener('scroll', throttle(function() {
+
+    console.log('Scroll event triggered');
+}, 200));
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.onload = () => {
+            img.classList.add('loaded');
+        };
+    });
 });
 
-        const numParticles = 100;
-        for (let i = 0; i < numParticles; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.width = `${Math.random() * 5}px`;
-            particle.style.height = `${Math.random() * 5}px`;
-            particle.style.top = `${Math.random() * 100}vh`;
-            particle.style.left = `${Math.random() * 100}vw`;
-            particle.style.animation = `move ${Math.random() * 5 + 5}s linear infinite`;
-            document.body.appendChild(particle);
-        }
-
-        // Animar partículas
-        document.styleSheets[0].insertRule(`
-            @keyframes move {
-                0% { transform: translateY(0) translateX(0); }
-                100% { transform: translateY(-100vh) translateX(${Math.random() * 20 - 10}vw); }
-            }
-        `, document.styleSheets[0].cssRules.length);
+particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('Particles.js config loaded');
+});
