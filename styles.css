@@ -398,3 +398,25 @@ img.loaded {
     opacity: 1;
 }
 
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ejemplo de ajuste de tamaño de fuente */
+        padding-bottom: 50px; /* Ajuste del espacio inferior */
+    }
+
+    header {
+        padding: 15px 0; /* Ajuste del espacio en el encabezado */
+    }
+
+    main {
+        padding: 20px; /* Ajuste del espacio en el contenido principal */
+    }
+
+    footer {
+        padding: 10px 0; /* Ajuste del espacio en el pie de página */
+    }
+
+    .boton-cabeza-gato {
+        bottom: 10px; /* Ajuste de posición del botón de gato */
+    }
+}
