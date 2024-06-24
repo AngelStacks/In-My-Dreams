@@ -173,6 +173,16 @@ footer {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     pointer-events: none;
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(calc(100vw - 100%));
+    }
 }
 
 .nav-button {
@@ -422,5 +432,9 @@ img.loaded {
     .parallax {
         min-height: 300px; /* Ajuste de altura mínima para dispositivos móviles */
     }
-}
 
+    /* Ajuste para las partículas en dispositivos móviles */
+    .particle {
+        animation: none; /* Desactiva la animación en dispositivos móviles si es necesario */
+    }
+}
