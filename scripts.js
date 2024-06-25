@@ -131,45 +131,6 @@ function throttle(func, limit) {
         }
     };
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const isMobile = window.innerWidth <= 768;
-    const numberOfParticles = isMobile ? 0 : 50; // No crear partículas en dispositivos móviles
-
-    for (let i = 0; i < numberOfParticles; i++) {
-        createParticle();
-    }
-
-    function createParticle() {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        document.body.appendChild(particle);
-        if (!isMobile) { // Solo animar partículas en dispositivos no móviles
-            animateParticle(particle);
-        }
-    }
-
-    function animateParticle(particle) {
-        const duration = Math.random() * 30 + 20; // Duración de la animación entre 20s y 50s
-        const initialX = Math.random() * 100;
-        const initialY = Math.random() * 100;
-        const finalX = Math.random() * 100;
-        const finalY = Math.random() * 100;
-
-        let startTime = null;
-        function animationStep(timestamp) {
-            if (!startTime) startTime = timestamp;
-            const elapsed = timestamp - startTime;
-            const progress = (elapsed / (duration * 1000)) % 1;
-
-            const currentX = initialX + (finalX - initialX) * progress;
-            const currentY = initialY + (finalY - initialY) * progress;
-
-            particle.style.transform = `translate(${currentX}vw, ${currentY}vh)`;
-
-            requestAnimationFrame(animationStep);
-        }
-
         requestAnimationFrame(animationStep);
     }
 });
