@@ -150,9 +150,11 @@ particlesJS.load('particles-js', 'particles.json', function() {
     console.log('Particles.js config loaded');
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
+    const particles = [];
     const isMobile = window.innerWidth <= 768;
-    const numberOfParticles = isMobile ? 20 : 100; // Ajusta según tu preferencia
+    const numberOfParticles = isMobile ? 20 : 100;
 
     for (let i = 0; i < numberOfParticles; i++) {
         createParticle();
@@ -162,22 +164,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const particle = document.createElement('div');
         particle.classList.add('particle');
         document.body.appendChild(particle);
+        particles.push(particle);
         animateParticle(particle);
     }
 
     function animateParticle(particle) {
-        const duration = Math.random() * 30 + 20; // Duración de la animación entre 20s y 50s
+        const duration = Math.random() * 30 + 20; // Duration between 20s and 50s
         const delay = Math.random() * 10;
         const initialX = Math.random() * 100;
         const initialY = Math.random() * 100;
         const finalX = Math.random() * 100;
         const finalY = Math.random() * 100;
 
-        particle.style.animation = `move ${duration}s linear ${delay}s infinite`;
-        particle.style.transform = `translate(${initialX}vw, ${initialY}vh)`;
+        let startTime = null;
+        function animationStep(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = (elapsed / (duration * 1000)) % 1;
 
-        particle.addEventListener('animationiteration', () => {
-            particle.style.transform = `translate(${finalX}vw, ${finalY}vh)`;
-        });
+            const currentX = initialX + (finalX - initialX) * progress;
+            const currentY = initialY + (finalY - initialY) * progress;
+
+            particle.style.transform = `translate(${currentX}vw, ${currentY}vh)`;
+
+            requestAnimationFrame(animationStep);
+        }
+
+        requestAnimationFrame(animationStep);
     }
 });
