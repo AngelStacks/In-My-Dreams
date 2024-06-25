@@ -297,6 +297,8 @@ footer {
     body {
         font-size: 14px; /* Ajuste del tamaño de fuente */
         padding-bottom: 50px; /* Ajuste del espacio inferior */
+        background-attachment: scroll;
+        background-size: cover;
     }
 
     header {
