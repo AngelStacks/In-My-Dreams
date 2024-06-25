@@ -152,9 +152,8 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const particles = [];
     const isMobile = window.innerWidth <= 768;
-    const numberOfParticles = isMobile ? 20 : 100;
+    const numberOfParticles = isMobile ? 10 : 50; // Reducir el número de partículas en dispositivos móviles
 
     for (let i = 0; i < numberOfParticles; i++) {
         createParticle();
@@ -164,12 +163,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const particle = document.createElement('div');
         particle.classList.add('particle');
         document.body.appendChild(particle);
-        particles.push(particle);
-        animateParticle(particle);
+        if (!isMobile) { // Solo animar partículas en dispositivos no móviles
+            animateParticle(particle);
+        }
     }
 
     function animateParticle(particle) {
-        const duration = Math.random() * 30 + 20; // Duration between 20s and 50s
+        const duration = Math.random() * 30 + 20; // Duración de la animación entre 20s y 50s
         const delay = Math.random() * 10;
         const initialX = Math.random() * 100;
         const initialY = Math.random() * 100;
