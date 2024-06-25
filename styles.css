@@ -294,9 +294,30 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ajuste del tamaño de fuente */
+        padding-bottom: 50px; /* Ajuste del espacio inferior */
+    }
+
+    header {
+        padding: 15px 0; /* Ajuste del espacio en el encabezado */
+    }
+
+    main {
+        padding: 20px; /* Ajuste del espacio en el contenido principal */
+    }
+
+    footer {
+        padding: 10px 0; /* Ajuste del espacio en el pie de página */
+    }
+
     .particle {
         width: 5px;
-        height: 5px;
+        height: 5px; /* Reducir tamaño de partículas en dispositivos móviles */
+    }
+
+    .boton-cabeza-gato {
+        bottom: 10px; /* Ajuste de posición del botón de gato */
     }
 }
 .section-animation {
