@@ -132,24 +132,6 @@ function throttle(func, limit) {
     };
 }
 
-window.addEventListener('scroll', throttle(function() {
-
-    console.log('Scroll event triggered');
-}, 200));
-
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.onload = () => {
-            img.classList.add('loaded');
-        };
-    });
-});
-
-particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('Particles.js config loaded');
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const isMobile = window.innerWidth <= 768;
     const numberOfParticles = isMobile ? 0 : 50; // No crear partículas en dispositivos móviles
