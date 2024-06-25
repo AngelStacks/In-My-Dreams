@@ -149,3 +149,35 @@ document.addEventListener('DOMContentLoaded', function() {
 particlesJS.load('particles-js', 'particles.json', function() {
     console.log('Particles.js config loaded');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth <= 768;
+    const numberOfParticles = isMobile ? 20 : 100; // Ajusta según tu preferencia
+
+    for (let i = 0; i < numberOfParticles; i++) {
+        createParticle();
+    }
+
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        document.body.appendChild(particle);
+        animateParticle(particle);
+    }
+
+    function animateParticle(particle) {
+        const duration = Math.random() * 30 + 20; // Duración de la animación entre 20s y 50s
+        const delay = Math.random() * 10;
+        const initialX = Math.random() * 100;
+        const initialY = Math.random() * 100;
+        const finalX = Math.random() * 100;
+        const finalY = Math.random() * 100;
+
+        particle.style.animation = `move ${duration}s linear ${delay}s infinite`;
+        particle.style.transform = `translate(${initialX}vw, ${initialY}vh)`;
+
+        particle.addEventListener('animationiteration', () => {
+            particle.style.transform = `translate(${finalX}vw, ${finalY}vh)`;
+        });
+    }
+});
