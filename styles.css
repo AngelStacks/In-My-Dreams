@@ -115,7 +115,7 @@ main {
     animation: fadeInUp 1s ease-in-out;
     transition: opacity 0.5s ease-in-out;
     opacity: 50;
-    min-height: calc(100vh - 140px); /* Ajusta la altura mínima */
+    min-height: auto; /* Elimina la altura mínima para adaptarse al contenido */
 }
 
 main.show {
@@ -167,15 +167,6 @@ footer {
     bottom: 0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     font-size: 14px;
-}
-
-.particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    pointer-events: none;
-    width: 10px;
-    height: 10px;
 }
 
 .nav-button {
@@ -297,10 +288,6 @@ footer {
 
     footer {
         padding: 10px 0;
-    }
-
-    .particle {
-        display: none;
     }
 }
 
