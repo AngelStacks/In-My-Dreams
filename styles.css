@@ -14,10 +14,7 @@ body {
     transition: background 0.5s, color 0.5s;
     min-height: 100vh;
     overflow-x: hidden;
-    padding-bottom: 70px;
-    animation: scrollBackground 80s linear infinite;
     position: relative;
-    animation: scrollBackground 80s linear infinite;
 }
 
 body::before {
@@ -79,8 +76,8 @@ nav ul li a::before {
     visibility: hidden;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
-    
 }
+
 nav ul li a:hover {
     text-decoration: underline;
 }
@@ -118,12 +115,13 @@ main {
     animation: fadeInUp 1s ease-in-out;
     transition: opacity 0.5s ease-in-out;
     opacity: 50;
+    min-height: calc(100vh - 140px); /* Ajusta la altura mínima */
 }
+
 main.show {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-
 
 section {
     margin-bottom: 25px;
@@ -170,6 +168,7 @@ footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     font-size: 14px;
 }
+
 .particle {
     position: absolute;
     background: rgba(255, 255, 255, 0.8);
@@ -178,6 +177,7 @@ footer {
     width: 10px;
     height: 10px;
 }
+
 .nav-button {
     background-color: #21e2e2;
     color: #000000;
@@ -197,7 +197,6 @@ footer {
 }
 
 .nav-button#nextButton i {
-    
     float: right;
     margin-left: 5px;
 }
@@ -257,6 +256,7 @@ footer {
         background-position: 100% 0;
     }
 }
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -278,54 +278,38 @@ footer {
         transform: translateY(0);
     }
 }
-@keyframes move {
-    0% { transform: translateY(0) translateX(0); }
-    100% { transform: translate(calc(100vw - 50%), calc(100vh - 50%)); }
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Ajuste del tamaño de fuente */
-        padding-bottom: 50px; /* Ajuste del espacio inferior */
-        background-attachment: scroll;
+        font-size: 14px;
+        padding-bottom: 50px;
+        background-attachment: scroll; /* Cambiado de fixed a scroll */
         background-size: cover;
     }
 
     header {
-        padding: 15px 0; /* Ajuste del espacio en el encabezado */
+        padding: 15px 0;
     }
 
     main {
-        padding: 20px; /* Ajuste del espacio en el contenido principal */
+        padding: 20px;
     }
 
     footer {
-        padding: 10px 0; /* Ajuste del espacio en el pie de página */
+        padding: 10px 0;
     }
 
     .particle {
         width: 5px;
-        height: 5px; /* Reducir tamaño de partículas en dispositivos móviles */
-    }
-
-    .boton-cabeza-gato {
-        bottom: 10px; /* Ajuste de posición del botón de gato */
+        height: 5px;
     }
 }
+
 .section-animation {
     opacity: 0;
     animation: fadeIn 1s ease forwards;
 }
+
 .boton-cabeza-gato {
     position: fixed;
     bottom: 20px;
@@ -345,8 +329,12 @@ footer {
 }
 
 @keyframes moverCabezaGato {
-    from { transform: rotate(-3deg); }
-    to { transform: rotate(2deg); }
+    from {
+        transform: rotate(-3deg);
+    }
+    to {
+        transform: rotate(2deg);
+    }
 }
 
 .redes-sociales {
@@ -355,17 +343,19 @@ footer {
     right: 10px;
     z-index: 999;
     display: flex;
-    flex-direction: column; 
-    opacity: 0; 
-    visibility: hidden; 
-    transform: translateY(20px); 
-    transition: all 0.5s ease; 
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
 }
+
 .redes-sociales.activo {
-    opacity: 1; 
-    visibility: visible; 
-    transform: translateY(0); 
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
+
 .redes-sociales .icono {
     display: block;
     width: 50px;
@@ -382,23 +372,29 @@ footer {
 
 .redes-sociales .icono:hover {
     background-color: #0056b3;
-    transform: scale(1.0); 
+    transform: scale(1.0);
 }
 
+.redes-sociales .instagram {
+    background-color: #e1306c;
+}
 
-.redes-sociales .instagram { background-color: #E1306C; }
-.redes-sociales .whatsapp { background-color: #25D366; }
+.redes-sociales .whatsapp {
+    background-color: #25d366;
+}
 
 .parallax {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Ben_Maguire_2017-05-25_%28Unsplash%29.jpg');
-    min-height: 400px; 
+    min-height: 400px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-input[type="text"], input[type="email"], textarea {
+input[type="text"],
+input[type="email"],
+textarea {
     border: 1px solid #ccc;
     padding: 8px;
     font-size: 14px;
@@ -420,6 +416,7 @@ input[type="submit"]:hover {
     background-color: #17b1b1;
     transform: scale(1.05);
 }
+
 img {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -428,4 +425,3 @@ img {
 img.loaded {
     opacity: 1;
 }
-
