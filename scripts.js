@@ -85,48 +85,26 @@ document.addEventListener('DOMContentLoaded', function() {
         loadPage(url);
     });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const isDesktop = window.innerWidth > 768; // Verifica si es de escritorio
-
-    if (isDesktop) {
-        const numParticles = 50; // Número de partículas en escritorio
-
+ // Crear partículas
+        const numParticles = 100;
         for (let i = 0; i < numParticles; i++) {
-            createParticle();
-        }
-
-        function createParticle() {
             const particle = document.createElement('div');
             particle.classList.add('particle');
+            particle.style.width = `${Math.random() * 5}px`;
+            particle.style.height = `${Math.random() * 5}px`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animation = `move ${Math.random() * 5 + 5}s linear infinite`;
             document.body.appendChild(particle);
-            animateParticle(particle);
         }
 
-        function animateParticle(particle) {
-            const duration = Math.random() * 30 + 20; // Duración de la animación entre 20s y 50s
-            const initialX = Math.random() * 100;
-            const initialY = Math.random() * 100;
-            const finalX = Math.random() * 100;
-            const finalY = Math.random() * 100;
-
-            let startTime = null;
-            function animationStep(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const elapsed = timestamp - startTime;
-                const progress = (elapsed / (duration * 1000)) % 1;
-
-                const currentX = initialX + (finalX - initialX) * progress;
-                const currentY = initialY + (finalY - initialY) * progress;
-
-                particle.style.transform = `translate(${currentX}vw, ${currentY}vh)`;
-
-                requestAnimationFrame(animationStep);
+        // Animar partículas
+        const sheet = document.styleSheets[0];
+        sheet.insertRule(`
+            @keyframes move {
+                0% { transform: translateY(0) translateX(0); }
+                100% { transform: translateY(-100vh) translateX(${Math.random() * 20 - 10}vw); }
             }
-
-            requestAnimationFrame(animationStep);
-        }
-    }
-});
-
+        `, sheet.cssRules.length);
 
 
