@@ -302,6 +302,7 @@ footer {
     .particle {
         width: 5px;
         height: 5px;
+        display: none;
     }
 }
 
